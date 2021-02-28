@@ -1,0 +1,28 @@
+<div class="col-md-3">
+  <h2>User info</h2>
+  <table class="table table-striped">
+    <tr>
+      <td>name</td>
+      <td><%= user.name %></td>
+    </tr>
+    <tr>
+      <td>introduction</td>
+      <td><%= user.introduction %></td>
+    </tr>
+  </table>
+  
+  <%= link_to "#" do %>
+    <i class="btn btn-outline-secondary btn-block fas fa-user-cog"></i>
+  <% end %>
+  
+  <h2>New book</h2>
+  <%= form_with model:@new_book, local:true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    
+    <%= f.label :body, "Opinion" %>
+    <%= f.text_area :body, class: "form-control"%>
+    
+    <%= f.submit "Create book" %>
+  <% end %>
+</div>

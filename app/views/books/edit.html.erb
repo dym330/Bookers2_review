@@ -1,0 +1,14 @@
+<div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+  <h1>Editing Book</h1>
+  <%= form_with model:@book, local:true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    
+    <%= f.label :body, "Opinion" %>
+    <%= f.text_area :body, class: "form-control"%>
+    
+    <%= f.submit "Update book", class: "btn btn-success" %>
+  <% end %>
+  <%= link_to "Show", book_path(@book) %> | 
+  <%= link_to "Back", books_path %>
+</div>
