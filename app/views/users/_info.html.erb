@@ -1,5 +1,6 @@
 <div class="col-md-3">
   <h2>User info</h2>
+  <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
   <table class="table table-striped">
     <tr>
       <td>name</td>
@@ -11,7 +12,7 @@
     </tr>
   </table>
   
-  <%= link_to "#" do %>
+  <%= link_to edit_user_path(user.id) do %>
     <i class="btn btn-outline-secondary btn-block fas fa-user-cog"></i>
   <% end %>
   
@@ -23,6 +24,6 @@
     <%= f.label :body, "Opinion" %>
     <%= f.text_area :body, class: "form-control"%>
     
-    <%= f.submit "Create book" %>
+    <%= f.submit "Create Book" %>
   <% end %>
 </div>
